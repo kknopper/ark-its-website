@@ -40,10 +40,10 @@ const { link = ":", theme="white", children } = Astro.props;
 
 {link !== ":" ?  (
 	<a class={`button ${theme}`} href={link} >
-		{children}
+		<slot />
 	</a>
 ) : (
 	<button class={`button ${theme}`}>
-		{children}
+		<slot />
 	</button>
 )}

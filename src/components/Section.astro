@@ -20,13 +20,13 @@ const { id, className, children } = Astro.props;
 		container-type: normal;
 	}
 
-	.section:global(.fullWidth) .content {
+	.section:global(.full-width) .content {
 		max-width: none;
 	}
 </style>
 
 <section class={`section ${className}`} id={id}>
 	<div class="content">
-		{children}
+		<slot />
 	</div>
 </section>

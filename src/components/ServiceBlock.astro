@@ -1,0 +1,42 @@
+---
+import { Icon } from 'astro-icon/components';
+
+interface Props {
+	name: string,
+	title: string,
+	copy: string,
+	key: number
+}
+
+const { name, title, copy } = Astro.props;
+---
+<style>
+	.service-block {
+		background-color: var(--ark-blue);
+		width: 100%;
+		max-width: 480px;
+		height: 360px;
+		border-radius: 15px;
+		padding: 35px;
+		box-shadow: var(--shadow-elevation-small);
+
+		@container (max-width: 735px) {
+			max-width: none;
+		}
+
+		.icon {
+			max-width: 50px;
+			margin-bottom: 15px;
+		}
+
+		.title, .blurb {
+			color: white
+		}
+	}
+</style>
+
+<div class="service-block">
+	<Icon {name} size="2x" class="icon" />
+	<h3 class="title">{title}</h3>
+	<p class="copy">{copy}</p>
+</div>

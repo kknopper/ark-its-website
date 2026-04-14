@@ -1,0 +1,31 @@
+---
+import { Icon } from 'astro-icon/components';
+import Waves from './Waves.astro'
+---
+
+<style>
+	.footer {
+		background-color: var(--ark-blue);
+		padding: 25px;
+	}
+
+	.ark {
+		margin: 0 auto;
+	}
+
+	.copyright {
+		margin-top: 15px;
+		text-align: center;
+		font-weight: 500;
+	}
+</style>
+
+{/* <Waves /> */}
+<footer class="footer">
+	<Icon name="ark-logo-wordmark" alt='ark' width={148} height={150} class="ark"
+		style={{
+			height: 'auto',
+		}}
+	/>
+	<p class="copyright">&copy; {new Date().getFullYear() }</p>
+</footer>
