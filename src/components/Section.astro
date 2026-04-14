@@ -1,0 +1,32 @@
+---
+interface Props {
+	// Additional custom props can be added here
+	id?: string;
+	className?: string;
+	children?: any
+}
+
+const { id, className, children } = Astro.props;
+---
+
+<style>
+	.section {
+		padding: 70px 5%;
+	}
+
+	.content {
+		max-width: 980px;
+		margin: 0 auto;
+		container-type: normal;
+	}
+
+	.section:global(.fullWidth) .content {
+		max-width: none;
+	}
+</style>
+
+<section class={`section ${className}`} id={id}>
+	<div class="content">
+		{children}
+	</div>
+</section>
