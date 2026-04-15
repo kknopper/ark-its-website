@@ -1,5 +1,5 @@
 ---
-import { Image } from 'astro:assets';
+import { Picture } from 'astro:assets';
 import arkImage from "../assets/ark.png";
 import Button from './Button.astro';
 import Section from './Section.astro'
@@ -68,5 +68,5 @@ import Section from './Section.astro'
 	<p class="intro">ARK is a Managed Service Provider, ready to bring your business to the next level. We provide Networking, VOIP, Helpdesk, Cybersecurity and more.</p>
 	<p class="intro">Stop drowning in IT bottlenecks, and board with ARK.</p>
 	<Button link="#contact">Board the Ark</Button>
-	<Image src={arkImage} alt='Image of the Ark, your IT Sanctuary' width={315} height={375} class="ark" />
+	<Picture src={arkImage} alt='Image of the Ark, your IT Sanctuary' densities={[1,2]} formats={['avif', 'webp']} width={315} height={375} class="ark" />
 </Section>
