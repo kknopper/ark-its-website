@@ -1,10 +1,19 @@
 ---
 import Section from './Section.astro';
-import ServiceBlock from "./ServiceBlock.astro";
-import {services} from './data';
+import ServiceItem from "./ServiceItem.astro";
+
+interface Service {
+		name: string,
+		title: string,
+		copy: string
+}
+
+type Services = Service[];
+
+const { services } = Astro.props as { services: Services };;
 ---
 <style>
-	.section {
+	:global(.section-services) {
 		background-color: white;
 		container-type: inline-size;
 	}
@@ -44,12 +53,11 @@ import {services} from './data';
 
 </style>
 
-<Section id="services" className="section-services section full-width">
+<Section id="services" className="full-width">
 	<h2 class="headline">Services</h2>
 	<div class="service-grid">
-
 		{services.map((block, i) => (
-			<ServiceBlock key={i}  name={block.name} title={block.title} copy={block.copy} />
+			<ServiceItem key={i}  name={block.name} title={block.title} copy={block.copy} />
 		))}
 	</div>
 </Section>

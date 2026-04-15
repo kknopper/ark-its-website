@@ -6,7 +6,7 @@ import Section from './Section.astro'
 ---
 
 <style>
-	.hero {
+	:global(.section-hero) {
 		background-color: var(--ark-blue);
 		position: relative;
 		container-type: inline-size;
@@ -53,7 +53,7 @@ import Section from './Section.astro'
 		right: 0;
 		height: auto;
 
-		@container (max-width: 750px) {
+		@container (max-width: 800px) {
 			margin-bottom: -70px;
 			margin-left: auto;
 			margin-right: -6%;
@@ -63,10 +63,10 @@ import Section from './Section.astro'
 	}
 </style>
 
-<Section id="hero" className="section-hero hero">
+<Section id="hero">
 	<h1 class="headline">Your IT Sanctuary</h1>
 	<p class="intro">ARK is a Managed Service Provider, ready to bring your business to the next level. We provide Networking, VOIP, Helpdesk, Cybersecurity and more.</p>
 	<p class="intro">Stop drowning in IT bottlenecks, and board with ARK.</p>
-	<Button>Board the Ark</Button>
-	<Image src={arkImage} alt='ark' width={315} height={368} class="ark" />
+	<Button link="#contact">Board the Ark</Button>
+	<Image src={arkImage} alt='Image of the Ark, your IT Sanctuary' width={315} height={368} class="ark" />
 </Section>

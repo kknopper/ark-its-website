@@ -1,16 +1,19 @@
 ---
-interface Props {
+import type { HTMLAttributes } from 'astro/types';
+
+interface Props extends HTMLAttributes<'button'> {
 	// Additional custom props can be added here
-	link?: URL;
+	link?: URL | string;
 	theme?: string;
-	children?: any
 }
 
-const { link = ":", theme="white", children } = Astro.props;
+const { link = ":", theme="white", type } = Astro.props;
 ---
 
 <style>
 	.button {
+		display: block;
+		text-align: center;
 		border-radius: 5px;
 		border: none;
 		padding: 10px;
@@ -43,7 +46,7 @@ const { link = ":", theme="white", children } = Astro.props;
 		<slot />
 	</a>
 ) : (
-	<button class={`button ${theme}`}>
+	<button {type} class={`button ${theme}`}>
 		<slot />
 	</button>
 )}

@@ -11,7 +11,7 @@ interface Props {
 const { name, title, copy } = Astro.props;
 ---
 <style>
-	.service-block {
+	.service-item {
 		background-color: var(--ark-blue);
 		width: 100%;
 		max-width: 480px;
@@ -24,18 +24,19 @@ const { name, title, copy } = Astro.props;
 			max-width: none;
 		}
 
-		.icon {
-			max-width: 50px;
-			margin-bottom: 15px;
-		}
-
 		.title, .blurb {
 			color: white
 		}
 	}
+
+	:global(.service-item .icon) {
+			max-width: 50px;
+			max-height: 50px;
+			margin-bottom: 15px;
+		}
 </style>
 
-<div class="service-block">
+<div class="service-item">
 	<Icon {name} size="2x" class="icon" />
 	<h3 class="title">{title}</h3>
 	<p class="copy">{copy}</p>
